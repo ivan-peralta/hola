@@ -29,6 +29,13 @@ services:
         public: true
         tags: ['controller.service_arguments']
 
+    app.handler.session_idle:
+        class: AppBundle\Handler\SessionIdleHandler
+        arguments: ["@session", "@security.token_storage", "@router", "%session_max_idle_time%"]
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+
+
     # add more services, or override services that need manual wiring
     # AppBundle\Service\ExampleService:
     #     arguments:
