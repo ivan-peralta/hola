@@ -18,7 +18,7 @@ class PageController extends Controller
     /**
      * @Route("/page/1", methods={"GET"})
      */
-    public function page_1(Request $request)
+    public function page1(Request $request)
     {
         return $this->render('custom_page.html.twig', ['number' => 1, 'name' => $this->getName()]);
     }
@@ -26,9 +26,8 @@ class PageController extends Controller
     /**
      * @Route("/page/2", methods={"GET"})
      */
-    public function page_2(Request $request)
+    public function page2(Request $request)
     {
         return $this->render('custom_page.html.twig', ['number' => 2, 'name' => $this->getName()]);
     }
-
 }

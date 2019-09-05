@@ -62,6 +62,7 @@ class ComposerStaticInit04fe4de917a4dce37954f58cdb823685
             'Psr\\Cache\\' => 10,
             'PhpParser\\' => 10,
             'PackageVersions\\' => 16,
+            'PDepend\\' => 8,
         ),
         'M' => 
         array (
@@ -226,6 +227,10 @@ class ComposerStaticInit04fe4de917a4dce37954f58cdb823685
         array (
             0 => __DIR__ . '/..' . '/ocramius/package-versions/src/PackageVersions',
         ),
+        'PDepend\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pdepend/pdepend/src/main/php/PDepend',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
@@ -316,6 +321,10 @@ class ComposerStaticInit04fe4de917a4dce37954f58cdb823685
             'ProxyManager\\' => 
             array (
                 0 => __DIR__ . '/..' . '/ocramius/proxy-manager/src',
+            ),
+            'PHPMD\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/phpmd/phpmd/src/main/php',
             ),
         ),
     );

@@ -22,5 +22,4 @@ class UserRepository extends \Doctrine\ORM\EntityRepository implements UserLoade
             ->getQuery()
             ->getOneOrNullResult();
     }
-
 }

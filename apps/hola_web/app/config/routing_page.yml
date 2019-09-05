@@ -1,9 +1,9 @@
 page_1:
     path: /page/1
-    controller: AppBundle\Controller\PageController::page_1
+    controller: AppBundle\Controller\PageController::page1
     methods: GET
 
 page_2:
     path: /page/2
-    controller: AppBundle\Controller\PageController::page_2
+    controller: AppBundle\Controller\PageController::page2
     methods: GET

@@ -1,12 +1,14 @@
 <?php
-// AppBundle/Handler/SessionIdleHandler.php
+
 namespace AppBundle\Handler;
+
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+
 class SessionIdleHandler
 {
     protected $session;
@@ -24,7 +26,7 @@ class SessionIdleHandler
         $this->router = $router;
         $this->maxIdleTime = $maxIdleTime;
     }
-    
+
     public function onKernelRequest(GetResponseEvent $event)
     {
         if (!$event->isMasterRequest()

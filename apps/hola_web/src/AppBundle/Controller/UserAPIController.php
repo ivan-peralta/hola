@@ -21,7 +21,7 @@ class UserAPIController extends Controller
     }
 
     /**
-     * @Route("/api/1.0/retrieve", methods={"GET"})
+     * @Route("/api/1.0/retrieve/{id}", methods={"GET"})
      */
     public function retrieve(Request $request, $id)
     {
@@ -30,4 +30,23 @@ class UserAPIController extends Controller
         );
     }
 
+    /**
+     * @Route("/api/1.0/update/{id}", methods={"PUT"})
+     */
+    public function update(Request $request, $id)
+    {
+        return new Response(
+            '<html><body>Lucky number: '. $id . '</body></html>'
+        );
+    }
+
+    /**
+     * @Route("/api/1.0/delete/{id}", methods={"DELETE"})
+     */
+    public function delete(Request $request, $id)
+    {
+        return new Response(
+            '<html><body>Lucky number: '. $id . '</body></html>'
+        );
+    }
 }

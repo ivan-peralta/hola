@@ -39,6 +39,8 @@ final class Versions
   'ocramius/package-versions' => '1.4.0@a4d4b60d0e60da2487bd21a2c6ac089f85570dbb',
   'ocramius/proxy-manager' => '2.2.3@4d154742e31c35137d5374c998e8f86b54db2e2f',
   'paragonie/random_compat' => 'v2.0.18@0a58ef6e3146256cc3dc7cc393927bcc7d1b72db',
+  'pdepend/pdepend' => '2.5.2@9daf26d0368d4a12bed1cacae1a9f3a6f0adf239',
+  'phpmd/phpmd' => '2.7.0@a05a999c644f4bc9a204846017db7bb7809fbe4c',
   'psr/cache' => '1.0.1@d11b50ad223250cf17b86e38383413f5a6764bf8',
   'psr/container' => '1.0.0@b7ce3b176482dbbc1245ebf52b181af44c2cf55f',
   'psr/link' => '1.0.0@eea8e8662d5cd3ae4517c9b864493f59fca95562',
@@ -47,6 +49,7 @@ final class Versions
   'sensio/distribution-bundle' => 'v5.0.25@80a38234bde8321fb92aa0b8c27978a272bb4baf',
   'sensio/framework-extra-bundle' => 'v5.2.4@1fdf591c4b388e62dbb2579de89c1560b33f865d',
   'sensiolabs/security-checker' => 'v5.0.3@46be3f58adac13084497961e10eed9a7fb4d44d1',
+  'squizlabs/php_codesniffer' => '3.4.2@b8a7362af1cc1aadb5bd36c3defc4dda2cf5f0a8',
   'swiftmailer/swiftmailer' => 'v5.4.12@181b89f18a90f8925ef805f950d47a7190e9b950',
   'symfony/maker-bundle' => 'v1.13.0@c4388410e2fb6321e77c5dd6e3cb2dba821f9fe6',
   'symfony/monolog-bundle' => 'v3.4.0@7fbecb371c1c614642c93c6b2cbcdf723ae8809d',
@@ -65,7 +68,7 @@ final class Versions
   'zendframework/zend-eventmanager' => '3.2.1@a5e2583a211f73604691586b8406ff7296a946dd',
   'sensio/generator-bundle' => 'v3.1.7@28cbaa244bd0816fd8908b93f90380bcd7b67a65',
   'symfony/phpunit-bridge' => 'v3.4.31@028617b04ae19d99d89089626ac969d161244ebc',
-  'ivan/hola_web' => 'dev-master@151063cd329923af5a4634b3e558c5f754c7101c',
+  'ivan/hola_web' => 'dev-master@409e901209a760a6f8a0eede8120c2465962cca2',
 );
 
     private function __construct()

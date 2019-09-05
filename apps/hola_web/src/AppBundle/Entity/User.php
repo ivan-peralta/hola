@@ -161,8 +161,8 @@ class User implements UserInterface, \Serializable
             $roles[] = 'ROLE_PAGE_1';
         } else if ($this->roles == 'PAGE_2') {
             $roles[] = 'ROLE_PAGE_2';
-        }       
-
+        }
+        
         return array_unique($roles);
     }
 
@@ -198,6 +198,4 @@ class User implements UserInterface, \Serializable
             // $this->salt
         ) = unserialize($serialized, ['allowed_classes' => false]);
     }
-
 }
-
