@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * User
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
  */
-class User
+class User implements UserInterface, \Serializable
 {
     /**
      * @var int
@@ -45,9 +46,9 @@ class User
     /**
      * @var int
      *
-     * @ORM\Column(name="role", type="integer")
+     * @ORM\Column(name="roles", type="string", length=255)
      */
-    private $role;
+    private $roles;
 
 
     /**
@@ -133,15 +134,15 @@ class User
     }
 
     /**
-     * Set role
+     * Set roles
      *
-     * @param integer $role
+     * @param integer $roles
      *
      * @return User
      */
-    public function setRole($role)
+    public function setRoles($rolse)
     {
-        $this->role = $role;
+        $this->roles = $roles;
 
         return $this;
     }
@@ -151,9 +152,52 @@ class User
      *
      * @return int
      */
-    public function getRole()
+    public function getRoles()
     {
-        return $this->role;
+        $roles = [];
+        if ($this->roles == 'ADMIN') {
+            $roles[] = 'ROLE_ADMIN';
+        } else if ($this->roles == 'PAGE_1') {
+            $roles[] = 'ROLE_PAGE_1';
+        } else if ($this->roles == 'PAGE_2') {
+            $roles[] = 'ROLE_PAGE_2';
+        }       
+
+        return array_unique($roles);
     }
+
+    public function eraseCredentials()
+    {
+    }
+
+    public function getSalt()
+    {
+        return;
+    }
+
+    /** @see \Serializable::serialize() */
+    public function serialize()
+    {
+        return serialize([
+            $this->id,
+            $this->username,
+            $this->password,
+            // see section on salt below
+            // $this->salt,
+        ]);
+    }
+
+    /** @see \Serializable::unserialize() */
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            $this->username,
+            $this->password,
+            // see section on salt below
+            // $this->salt
+        ) = unserialize($serialized, ['allowed_classes' => false]);
+    }
+
 }
 
