@@ -21,12 +21,12 @@ use Symfony\Bridge\PhpUnit\ClockMock;
  */
 class ClockMockTest extends TestCase
 {
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         ClockMock::register(__CLASS__);
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         ClockMock::withClockMock(1234567890.125);
     }
@@ -56,5 +56,17 @@ class ClockMockTest extends TestCase
     {
         usleep(2);
         $this->assertSame(1234567890.125002, microtime(true));
+    }
+
+    public function testDate()
+    {
+        $this->assertSame('1234567890', date('U'));
+    }
+
+    public function testGmDate()
+    {
+        ClockMock::withClockMock(1555075769);
+
+        $this->assertSame('1555075769', gmdate('U'));
     }
 }

@@ -15,8 +15,3 @@ _main:
 
 _page:
     resource: routing_page.yml
-
-_user_api:
-    resource: routing_api.yml
-
-

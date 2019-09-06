@@ -140,7 +140,7 @@ class User implements UserInterface, \Serializable
      *
      * @return User
      */
-    public function setRoles($rolse)
+    public function setRoles($roles)
     {
         $this->roles = $roles;
 
@@ -162,7 +162,7 @@ class User implements UserInterface, \Serializable
         } else if ($this->roles == 'PAGE_2') {
             $roles[] = 'ROLE_PAGE_2';
         }
-        
+
         return array_unique($roles);
     }
 

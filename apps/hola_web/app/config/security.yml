@@ -20,6 +20,8 @@ security:
                     - AppBundle\Security\LoginFormAuthenticator
             logout:
                 path: app_logout
+            logout_on_user_change: true
+
             # activate different ways to authenticate
 
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
@@ -30,5 +32,3 @@ security:
     access_control:
         - { path: /page/1, roles: [ROLE_ADMIN, ROLE_PAGE_1] }
         - { path: /page/2, roles: [ROLE_ADMIN, ROLE_PAGE_2] }
-
-        # - { path: ^/profile, roles: ROLE_USER }
